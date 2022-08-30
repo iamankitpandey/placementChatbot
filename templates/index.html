@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<head>
+	<link rel="stylesheet"
+    href="{{ url_for('static', filename='css/home.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="{{ url_for('static', filename='js/ajax_req.js') }}"></script>
+  {#   <script
+			  src="https://code.jquery.com/jquery-3.4.1.js"
+			  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+			  crossorigin="anonymous"></script> #}
+	<title>Bot</title>
+</head>
+{# {% if name %}
+  <h1>Hello {{ name }}!</h1>
+{% else %}
+  <h1>sas	, World!</h1>
+{% endif %} #}
+	<body>
+		<div class="background_left_bg"></div>
+		<div class="main_div">
+			<div class="chat_logo_1">
+				<h2>Placement Query Portal</h2>
+				<div>
+					<h1>An initiative</h1>
+					<p>to help each student solve their placment queries.<br/>Proceed with the chatbot for the same.</p>
+					<div style="padding-top: 20px;" id="proceed_btn_small_scr"><button class="get_started_btn" onclick="open_chat_box_small_screen()">Proceed</button>
+				</div>
+			</div>
+			<div class="chat_box initial_chat_box" id="initial_chat_box">
+				<div class="terms_conditions_bottom_left" id="terms_and_condtions">Terms and conditions</div>
+				<div class="terms_conditions_bottom_left" id="terms_conditions_bottom_left" onclick="hide_every_bot_ui()">Go Back</div>
+				<div class="chat_icon_main_right"></div>
+				<div class="intro_chat_bot">
+					<div class="chatbot_intro_text">
+						<h3>I'm Shaily</h3>
+						<p>Your virtual placement assistant, Tell me your name to proceed.</p>
+					</div>
+					<div class="chatbot_image_personal"></div>
+				</div>
+				<div class="form_chat_bot_intro">
+					<div><input type="text" name="user_first_name" id="name_input_box" placeholder="First Name"></div>
+					<div><button class="get_started_btn" onclick="display_hide_chat_box()">Get Started</button></div>
+					<div class="error_red_msg" id="error_red_msg"><p>*Please enter your Full Name</p></div>
+				</div>
+			</div>
+			<div class="chat_box main_chat_chat_box" id="main_chat_chat_box">
+				<div class="chat_title_bar">
+					<div class="chat_icon_title_logo"></div>
+					<div class="chat_name_person">Shaily</div>
+				</div>
+				<div class="chat_body_main" id="chat_body_main">
+					<div class="chat_start_info" id="chat_start_info">Please start typing to get help</div>
+					{# <div class="chat_human">
+						<div class="man_icon_chat_small"></div>
+						<div class="chat_text_human">lorem ipsum dolor sit amer</div>
+					</div>
+					<div class="chat_bot">
+						<div class="chat_text_bot">lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum dolor sit amer</div>
+						<div class="bot_icon_chat_small"></div>
+					</div> #}
+				</div>
+				<div class="chat_text_box_chat">
+					<div class="typing_sending_thinking" id="typing_sending_thinking"></div>
+					<textarea  name="send_chat_txt" 
+						id="send_chat_txt_data"
+						onkeyup="if(event.keyCode==13) send_data('enter_key');"></textarea>
+					<div class="send_btn" onclick="send_data('send_key')"></div>
+				</div>
+			</div>
+		</div>
+	</body>
